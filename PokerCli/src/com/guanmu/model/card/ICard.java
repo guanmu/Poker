@@ -9,9 +9,12 @@ import com.guanmu.model.suit.Suit;
  */
 public interface ICard {
 	
+	public int getId();
+	
 	public int getValue();
 	
-	
 	public Suit getSuit();
+	
+	public String getText();
 	
 }
