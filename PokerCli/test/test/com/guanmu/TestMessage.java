@@ -11,8 +11,10 @@ public class TestMessage {
 	@Test
 	public void test() {
 		String str = Message.getString("test");
-		
 		Assert.assertEquals(str, Message.DEFUALT);
+		
+		str = Message.getString("BigJokerCard.text");
+		Assert.assertEquals("´óÍõ", str);
 	}
 
 }

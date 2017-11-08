@@ -3,7 +3,7 @@ package com.guanmu.utils;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.guanmu.config.Config;
+import com.guanmu.config.CardConfig;
 import com.guanmu.exceptin.IllegalValueCardException;
 import com.guanmu.model.card.BigJokerCard;
 import com.guanmu.model.card.ICard;
@@ -35,7 +35,7 @@ public class CardUtils {
 		
 		int id = 1;
 		
-		for(int v = 1;v <= Config.MAX_NUMBER_CARD_VALUE;v++) {
+		for(int v = 1;v <= CardConfig.MAX_NUMBER_CARD_VALUE;v++) {
 			for(Suit suit : Suit.values()) {
 				NumberCard numberCard = new NumberCard(id,v,suit);
 				numberCards.add(numberCard);

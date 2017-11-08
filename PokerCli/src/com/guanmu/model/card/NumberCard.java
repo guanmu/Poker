@@ -1,6 +1,6 @@
 package com.guanmu.model.card;
 
-import com.guanmu.config.Config;
+import com.guanmu.config.CardConfig;
 import com.guanmu.exceptin.IllegalValueCardException;
 import com.guanmu.model.suit.Suit;
 
@@ -24,11 +24,11 @@ public class NumberCard extends AbstractCard {
 	
 	private void initCardText() throws IllegalValueCardException {
 		
-		if (value > Config.CARD_NUMBER_TEXTS.length) {
+		if (value > CardConfig.CARD_NUMBER_TEXTS.length) {
 			throw new IllegalValueCardException(value);
 		}
 		
-		text = suit.getText() + Config.CARD_TEXT_SPLIT + Config.CARD_NUMBER_TEXTS[value -1];
+		text = suit.getText() + CardConfig.CARD_TEXT_SPLIT + CardConfig.CARD_NUMBER_TEXTS[value -1];
 	}
 
 	@Override
