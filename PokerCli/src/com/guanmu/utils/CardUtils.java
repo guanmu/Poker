@@ -1,6 +1,9 @@
 package com.guanmu.utils;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.guanmu.config.CardConfig;
@@ -60,5 +63,23 @@ public class CardUtils {
 		
 		
 		return cards;
+	}
+	
+	public static void randomCards(List<ICard> cards) {
+		
+		List<ICard> source = new LinkedList<>(cards);
+		List<ICard> copy = new CopyOnWriteArrayList<>();
+		
+		while(source.size() > 0) {
+			
+			int index = new Random().nextInt(source.size());
+			
+			ICard card = source.get(index);
+			copy.add(card);
+			source.remove(index);
+		}
+		
+		cards.clear();
+		cards.addAll(copy);
 	}
 }

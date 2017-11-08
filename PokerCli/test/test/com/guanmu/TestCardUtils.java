@@ -12,7 +12,7 @@ import com.guanmu.exceptin.IllegalValueCardException;
 import com.guanmu.model.card.ICard;
 import com.guanmu.utils.CardUtils;
 
-public class TestCreatePackCard {
+public class TestCardUtils {
 
 	@Test
 	public void testCreateOnePackCard() throws IllegalValueCardException {
@@ -49,4 +49,19 @@ public class TestCreatePackCard {
 		Assert.assertEquals(54, cardTexts.size());
 		Assert.assertEquals(108, cardIds.size());	
 	}	
+	
+	@Test
+	public void testRandomCard() throws IllegalValueCardException {
+		List<ICard> cards = CardUtils.createOnePackCard(1);
+		
+		CardUtils.randomCards(cards);
+		
+		for(ICard card : cards) {
+			String cardText = card.getText();
+			int id = card.getId();
+			System.out.println(cardText + "-" + id);
+		}		
+		
+		Assert.assertEquals(54, cards.size());		
+	}
 }
