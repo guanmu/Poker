@@ -1,7 +1,5 @@
 package test.com.guanmu;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import com.guanmu.log.CardLoggers;

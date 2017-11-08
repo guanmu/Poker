@@ -4,6 +4,8 @@ public class CardConfig {
 	
 	public static int MAX_NUMBER_CARD_VALUE = 13;
 	
+	public static int PACK_NUMBER_CARD_NUMBER = 52;
+	
 	public static String CARD_TEXT_SPLIT = " ";
 	
 	public static String[] CARD_NUMBER_TEXTS = {

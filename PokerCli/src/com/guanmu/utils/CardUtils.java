@@ -19,27 +19,26 @@ public class CardUtils {
 	 * @return
 	 * @throws IllegalValueCardException 
 	 */
-	public static List<ICard> createOnePackCard() throws IllegalValueCardException {
+	public static List<ICard> createOnePackCard(int startId) throws IllegalValueCardException {
 		
-		List<ICard> numberCards = createOnePackCardNoJoker();
+		List<ICard> numberCards = createOnePackCardNoJoker(startId);
 		
-		numberCards.add(new LittleJokerCard(53));
-		numberCards.add(new BigJokerCard(54));
+		
+		numberCards.add(new LittleJokerCard(startId + CardConfig.PACK_NUMBER_CARD_NUMBER));
+		numberCards.add(new BigJokerCard(startId + CardConfig.PACK_NUMBER_CARD_NUMBER + 1));
 		
 		return numberCards;
 	}
 
-	private static List<ICard> createOnePackCardNoJoker() throws IllegalValueCardException {
+	private static List<ICard> createOnePackCardNoJoker(int startId) throws IllegalValueCardException {
 		
 		List<ICard> numberCards = new CopyOnWriteArrayList<ICard>();
 		
-		int id = 1;
-		
 		for(int v = 1;v <= CardConfig.MAX_NUMBER_CARD_VALUE;v++) {
 			for(Suit suit : Suit.values()) {
-				NumberCard numberCard = new NumberCard(id,v,suit);
+				NumberCard numberCard = new NumberCard(startId,v,suit);
 				numberCards.add(numberCard);
-				id++;
+				startId++;
 			}
 		}
 		
@@ -47,5 +46,19 @@ public class CardUtils {
 	};
 	
 	
-	
+	public static List<ICard> createPackCards(int packNumber) throws IllegalValueCardException {
+		
+		List<ICard> cards = new CopyOnWriteArrayList<>();
+		
+		int id = 1;
+		for(int i = 1;i <= packNumber;i ++) {
+			List<ICard> tmp = createOnePackCard(id);
+			cards.addAll(tmp);
+			
+			id += tmp.size();
+		}
+		
+		
+		return cards;
+	}
 }
