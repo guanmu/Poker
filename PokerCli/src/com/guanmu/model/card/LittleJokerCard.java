@@ -3,6 +3,11 @@ package com.guanmu.model.card;
 import com.guanmu.model.suit.Suit;
 import com.guanmu.resouses.Message;
 
+/**
+ * –°Õı¿‡
+ * @author wangquan
+ *
+ */
 public class LittleJokerCard extends JokerCard {
 
 	public LittleJokerCard(int id) {

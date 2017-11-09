@@ -4,6 +4,11 @@ import com.guanmu.config.CardConfig;
 import com.guanmu.exceptin.IllegalValueCardException;
 import com.guanmu.model.suit.Suit;
 
+/**
+ * 普通卡牌类，非王牌
+ * @author wangquan
+ *
+ */
 public class NumberCard extends AbstractCard {
 
 	protected Suit suit;

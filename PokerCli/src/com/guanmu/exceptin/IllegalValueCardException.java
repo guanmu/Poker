@@ -1,5 +1,10 @@
 package com.guanmu.exceptin;
 
+/**
+ * 数字卡牌（非王牌）数值非法异常
+ * @author wangquan
+ *
+ */
 public class IllegalValueCardException extends Exception {
 
 	/**

@@ -3,7 +3,7 @@ package com.guanmu.model.suit;
 import com.guanmu.resouses.Message;
 
 /**
- * 花色抽象类
+ * 花色枚举类
  * @author wangquan
  *
  */

@@ -1,5 +1,10 @@
 package com.guanmu.config;
 
+/**
+ * 系统相关配置
+ * @author wangquan
+ *
+ */
 public class CardConfig {
 	
 	public static int MAX_NUMBER_CARD_VALUE = 13;

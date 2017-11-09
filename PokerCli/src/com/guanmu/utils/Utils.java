@@ -1,5 +1,10 @@
 package com.guanmu.utils;
 
+/**
+ * 通用工具类
+ * @author wangquan
+ *
+ */
 public class Utils {
 
 	public static final String OS_NAME = System.getProperty("os.name").toLowerCase();

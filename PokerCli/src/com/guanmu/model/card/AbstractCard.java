@@ -1,7 +1,11 @@
 package com.guanmu.model.card;
 
 
-
+/**
+ * 抽象卡牌类
+ * @author wangquan
+ *
+ */
 public abstract class AbstractCard implements ICard {
 	/** 大小值*/
 	protected int value;

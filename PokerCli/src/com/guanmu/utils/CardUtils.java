@@ -1,6 +1,5 @@
 package com.guanmu.utils;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -14,13 +13,19 @@ import com.guanmu.model.card.LittleJokerCard;
 import com.guanmu.model.card.NumberCard;
 import com.guanmu.model.suit.Suit;
 
+/**
+ * 卡牌工具类
+ * @author wangquan
+ *
+ */
 public class CardUtils {
 	
 	
 	/**
 	 * 生成一副标准卡牌
+	 * @param startId	卡牌的起始id
 	 * @return
-	 * @throws IllegalValueCardException 
+	 * @throws IllegalValueCardException
 	 */
 	public static List<ICard> createOnePackCard(int startId) throws IllegalValueCardException {
 		
@@ -32,7 +37,13 @@ public class CardUtils {
 		
 		return numberCards;
 	}
-
+	
+	/**
+	 * 生成一副没有王牌的普通卡牌
+	 * @param startId 卡牌的起始id
+	 * @return
+	 * @throws IllegalValueCardException
+	 */
 	private static List<ICard> createOnePackCardNoJoker(int startId) throws IllegalValueCardException {
 		
 		List<ICard> numberCards = new CopyOnWriteArrayList<ICard>();
@@ -48,7 +59,12 @@ public class CardUtils {
 		return numberCards;
 	};
 	
-	
+	/**
+	 * 生成多副id不通的卡牌
+	 * @param packNumber
+	 * @return
+	 * @throws IllegalValueCardException
+	 */
 	public static List<ICard> createPackCards(int packNumber) throws IllegalValueCardException {
 		
 		List<ICard> cards = new CopyOnWriteArrayList<>();
@@ -65,6 +81,10 @@ public class CardUtils {
 		return cards;
 	}
 	
+	/**
+	 * 随机打乱卡牌组的卡牌
+	 * @param cards
+	 */
 	public static void randomCards(List<ICard> cards) {
 		
 		List<ICard> source = new LinkedList<>(cards);
